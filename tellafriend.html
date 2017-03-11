@@ -25,7 +25,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>The Problem of Domestic Violence</strong></a>
+									<a href="index.html" class="logo"><strong>Tell a Friend. Show You Care.</strong></a>
 									<ul class="icons">
 										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -35,28 +35,63 @@
 									</ul>
 								</header>
 
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>In Singapore, over 70% of domestic violence cases go unreported.</h1>
-                                            <!-- United Nations’ International Violence Against Women Survey in 2009 -->
-											<p>DID YOU KNOW?</p>
-										</header>
-										<p> Can you differentiate arguments from domestic violence? Read about the problem in Singapore.</p>
-										<ul class="actions">
-											<li><a href="problem.html" class="button big">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="images/vio.jpg" alt="" />
-									</span>
+							<!-- Form -->
+								<section id="form">
+									<form method="post" action="http://www.siowy.mypressonline.com/formmail.php" name="myForm">
+									    <input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
+
+									    <!-- STEP 2: Put your email address in the 'recipients' value.
+									                 Note that you also have to allow this email address in the
+									                 $TARGET_EMAIL setting within formmail.php!
+									    -->
+									    <input type="hidden" name="recipients" value="you@your-host-name" />
+
+									    <!-- STEP 3: Specify required fields in the 'required' value - or leave unchanged.
+									            NOTE: DO NOT put your email address and name here.
+									            "Your email address" and "Your name" are error messages for your users to see,
+									            not placeholders for you to replace.
+									    -->
+									    <input type="hidden" name="required" value="EmailAddr:Your email address,FullName:Your name" />
+
+									    <!-- STEP 4: Put your subject line in the 'subject' value. -->
+									    <input type="hidden" name="subject" value="Sample FormMail Testing" />
+
+									    <!-- ALL DONE! Visit our site for HOW TO guides and more complex features. -->
+
+									    <!-- this derives (creates) "email" and "realname" special fields from the input fields -->
+									    <input type="hidden" name="derive_fields" value="email=EmailAddr,realname=FullName" />
+
+									    <!-- this excludes the "email" and "realname" special fields from the body of the email you receive -->
+									    <input type="hidden" name="mail_options" value="Exclude=email;realname" />
+
+									    <table border="1" cellspacing="5%">
+									    <tr>
+									        <td>
+									        <p>Your friend's name:</p>
+									        </td>
+									        <td><input type="text" name="FullName" />
+									        </td>
+									    </tr>
+									    <tr>
+									        <td>
+									        <p>Your friend's email:</p>
+									        </td>
+									        <td><input type="text" name="EmailAddr" />
+									        </td>
+									    </tr>
+									    <tr>
+									        <td valign="top">
+									        <p>A message:</p>
+									        </td>
+									        <td><textarea name="mesg" rows="5" cols="50"></textarea>
+									        </td>
+									    </tr>
+									    <tr>
+									        <td><input type="submit" value="Share with your friend" /></td>
+									    </tr>
+									    </table>
+									</form>
 								</section>
-                                <footer id="footer">
-                                    <p class="copyright">Statistic from Pave Singapore.</p>
-                                </footer>
-
-
 						</div>
 					</div>
 
@@ -107,6 +142,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<!-- Go to www.addthis.com/dashboard to customize your tools -->
+			<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c36d2c2c81ada5"></script>
 	</body>
 </html>
